@@ -1,3 +1,5 @@
 # QR-Code-Generator
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-ivy-turj6a)
+A litle fun project to generate QR Code with Angular
+
+Link to the website : https://angular-ivy-turj6a.stackblitz.io
