@@ -1,1 +1,8 @@
 /* Add application styles & imports to this file! */
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+
+body {
+  background-color: rgb(31, 31, 31);
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}

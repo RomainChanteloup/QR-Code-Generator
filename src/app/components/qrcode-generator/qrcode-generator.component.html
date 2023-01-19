@@ -1,3 +1,14 @@
 <h1>QR Code Generator</h1>
-<input (keyup)="onKey($event)" style="width: 200px;" type="text" /><br /><br />
-<img [src]="qrCodeBase64" style="width: 200px; text-align: center;" />
+
+<form style="min-width: 200px; max-width: 500px; margin: auto">
+  <mat-form-field style="width: 100%">
+    <mat-label>Text To generate QR code</mat-label>
+    <input matInput (keyup)="onKey($event)" />
+  </mat-form-field>
+</form>
+<div style="width: 100%">
+  <img
+    [src]="qrCodeBase64"
+    style="width: 200px; margin: auto; border-radius: 25px; display: block;"
+  />
+</div>
