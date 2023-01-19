@@ -2,8 +2,8 @@
 
 <form style="min-width: 200px; max-width: 500px; margin: auto">
   <mat-form-field style="width: 100%">
-    <mat-label>Text To generate QR code</mat-label>
-    <input matInput (keyup)="onKey($event)" />
+    <mat-label>Text to generate a Basic QR code</mat-label>
+    <input [disabled]="wifiCheck" matInput (keyup)="onKey($event)" />
   </mat-form-field>
 </form>
 <div style="width: 100%">
@@ -11,4 +11,44 @@
     [src]="qrCodeBase64"
     style="width: 200px; margin: auto; border-radius: 25px; display: block;"
   />
+</div>
+
+<div style="max-width:500px; margin: auto">
+  <mat-checkbox [(ngModel)]="wifiCheck" style="padding-top:25px"
+    >Wifi Code Generation</mat-checkbox
+  >
+  <div *ngIf="wifiCheck">
+    <form style="min-width: 200px; max-width: 500px; margin: auto">
+      <mat-form-field style="width: 100%">
+        <mat-label>Name of the Wifi Network (SSID)</mat-label>
+        <input matInput (keyup)="setSSID($event)" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Wifi Security</mat-label>
+        <mat-select
+          [(value)]="selectedSecurity"
+          (selectionChange)="setSecurity($event)"
+        >
+          <mat-option
+            *ngFor="let security of WifiSecurityList"
+            [value]="security"
+          >
+            {{ security }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-checkbox
+        [checked]="hiddenNetwork"
+        style="padding-top:25px"
+        (change)="setHiddenNetwork($event.checked)"
+        >Hidden Network</mat-checkbox
+      >
+
+      <mat-form-field *ngIf="selectedSecurity != 'nopass'" style="width: 100%">
+        <mat-label>Wifi Password</mat-label>
+        <input type="password" matInput (keyup)="setPassword($event)" />
+      </mat-form-field>
+    </form>
+  </div>
 </div>
