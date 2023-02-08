@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { QrcodeGeneratorComponent } from './components/qrcode-generator/qrcode-generator.component';
-import { CatsComponent } from './components/cats/cats.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -23,7 +22,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatCheckboxModule,
     MatSelectModule,
   ],
-  declarations: [AppComponent, QrcodeGeneratorComponent, CatsComponent],
+  declarations: [AppComponent, QrcodeGeneratorComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
